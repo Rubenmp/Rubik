@@ -30,6 +30,8 @@ F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 
 \includegraphics[width=10cm,height=10cm,keepaspectratio]{./img/movements.jpg}
 
+![Title](./img/movements.jpg "Movements")
+
 https://www.google.es/search?q=movimientos+cubo+de+rubik&client=ubuntu&hs=OJX&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj7iMzrq-nMAhUCChoKHUZcAVsQ_AUIBygB&biw=1088&bih=561#imgrc=h6oNMf74ZSsQSM%3A
 
 ## Arguments
