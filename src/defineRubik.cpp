@@ -2233,5 +2233,5 @@ void fileExample(){
    Rubik rubik = randomRubik();
    rubik.exportRubik(cout);
    cout << "\nThis file is this rubik's cube:\n";
-   cout << rubik;
+   rubik.printAll();;
 }
