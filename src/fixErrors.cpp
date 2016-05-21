@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
    Rubik rubik;
-   ifstream is("error.dat");
+   ifstream is("./data/error.dat");
    vector<char> solution;
 
    is >> rubik;

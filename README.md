@@ -30,8 +30,8 @@ F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 
 ![Title](./img/movements.jpg "Movements")
 
-[Image from](
-https://www.google.es/search?q=movimientos+cubo+de+rubik&client=ubuntu&hs=OJX&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj7iMzrq-nMAhUCChoKHUZcAVsQ_AUIBygB&biw=1088&bih=561#imgrc=h6oNMf74ZSsQSM%3A)
+[Image from]
+(http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
 
 ## Arguments
 Without arguments, the rubik's cube will be read from file or keyboard.

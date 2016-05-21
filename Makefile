@@ -16,8 +16,9 @@ resolution: $(OBJ)/resolution.o $(DIR_LIBS)/librubik.a
 searchErrors: $(OBJ)/searchErrors.o $(DIR_LIBS)/librubik.a
 	g++ -o $(BIN)/searchErrors $< $(LIBS)
 
-fixErrors:  $(OBJ)/fixErrors.o
+fixErrors:  $(OBJ)/fixErrors.o $(DIR_LIBS)/librubik.a
 	g++ -o $(BIN)/fixErrors $< $(LIBS)
+
 
 
 
@@ -29,6 +30,9 @@ $(OBJ)/searchErrors.o: $(SRC)/searchErrors.cpp
 
 $(OBJ)/fixErrors.o: $(SRC)/fixErrors.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
+
+
+
 
 $(OBJ)/defineRubik.o: $(SRC)/defineRubik.cpp $(INCLUDE)/defineRubik.h
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
@@ -47,7 +51,7 @@ documentation:
 
 clean:
 	@ echo "Cleaning..."
-	rm -f $(OBJ)/*.o $(DIR_LIBS)/lib*.a
+	rm -f $(OBJ)/*.o $(DIR_LIBS)/lib*.a ./doc/html/*
 	find . -regex ".*~" -exec rm -r {} \;
 
 

@@ -12,8 +12,8 @@ int main(){
 
 	for (unsigned int j=0; j<100000 && boolean; j++){
 	   os.close();
-	   os.open("error.dat");
-      aux = rubik = randomRubik();
+	   os.open("./data/error.dat");
+      aux = rubik = Rubik::randomRubik();
       //cout << rubik;
 
       rubik.solve(solution);

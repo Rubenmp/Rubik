@@ -64,7 +64,7 @@ int main(int argc, char* argv[]){
          else if (number == 4){
             cout << endl << "\t";
             printf(GREEN "4.  Example of a valid file of a rubik's cube:" RESET "\n");
-            fileExample();
+            Rubik::fileExample();
 
             cout << "\n\n\tLetters can be in capital letters, lowercase or number in [1, 6].";
             cout << "\n\tEach line is a face of rubik's cube, the program read from ";
@@ -81,7 +81,7 @@ int main(int argc, char* argv[]){
             printf(GREEN "5. Example of resolution of a random rubik's cube:" RESET "\n");
 
             while (boolean){
-               rubik = randomRubik();
+               rubik = Rubik::randomRubik();
                aux = rubik;
 
                rubik.solve(solution);
@@ -193,8 +193,7 @@ int main(int argc, char* argv[]){
          file >> rubik;
          auxiliar = rubik;
          outFile << rubik;
-         rubik.solve(solution);
-         rubik.exportSolution(solution, outFile);
+         rubik.exportSolution(outFile);
          outFile << rubik;
       }
       do{
