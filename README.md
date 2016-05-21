@@ -26,7 +26,7 @@ You can use three different options:
 
 You will be able to change the colours. The program will show:
 
-![Colours](./img/colours.jepg "Colours")
+![Colours](./img/colours.jpeg "Colours")
 
 
 ## Movements
