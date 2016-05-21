@@ -26,7 +26,7 @@ You can use three different options:
 
 You will be able to change the colours. The program will show:
 
-![Title](./img/colours.jepg "Movements")
+![Colours](./img/colours.jepg "Colours")
 
 
 ## Movements
@@ -36,7 +36,7 @@ The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2
 
 F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 
-![Title](./img/movements.jpg "Movements" =100x100)
+![Movements](./img/movements.jpg "Movements")
 
 [Image from]
 (http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
