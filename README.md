@@ -1,4 +1,9 @@
 # Rubik's cube
+## History
+Rubik's Cube is a 3-D combination puzzle invented in 1974[1][2] by Hungarian sculptor and professor of architecture Ernő Rubik. Originally called the Magic Cube.
+
+In a classic Rubik's Cube, each of the six faces is covered by nine stickers, each of one of six solid colours: white, red, blue, orange, green, and yellow. In currently sold models, white is opposite yellow, blue is opposite green, and orange is opposite red, and the red, white and blue are arranged in that order in a clockwise arrangement.
+
 ## Introduction
 The rubik's cube will be read from file or keyboard.
 The standard position for the rubik's cube is: green side in front of you and white side up.
@@ -19,7 +24,10 @@ You can use three different options:
    L/l/5 for blue
    Y/y/6 for yellow
 
-You will be able to change the colours.
+You will be able to change the colours. The program will show:
+
+![Title](./img/colours.jepg "Movements")
+
 
 ## Movements
 The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.
@@ -28,7 +36,7 @@ The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2
 
 F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 
-![Title](./img/movements.jpg "Movements")
+![Title](./img/movements.jpg "Movements" =100x100)
 
 [Image from]
 (http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
