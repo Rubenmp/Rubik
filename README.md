@@ -1,6 +1,6 @@
 # Rubik's cube
 ## History
-Rubik's Cube is a 3-D combination puzzle invented in 1974[1][2] by Hungarian sculptor and professor of architecture Ernő Rubik. Originally called the Magic Cube.
+Rubik's Cube is a 3-D combination puzzle invented in 1974 by Hungarian sculptor and professor of architecture [Ernő Rubik](https://en.wikipedia.org/wiki/Ern%C5%91_Rubik). Originally called the Magic Cube.
 
 In a classic Rubik's Cube, each of the six faces is covered by nine stickers, each of one of six solid colours: white, red, blue, orange, green, and yellow. In currently sold models, white is opposite yellow, blue is opposite green, and orange is opposite red, and the red, white and blue are arranged in that order in a clockwise arrangement.
 
