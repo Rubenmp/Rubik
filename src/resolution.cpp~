@@ -90,12 +90,18 @@ int main(int argc, char* argv[]){
 
                rubik.solve(solution);
                if (rubik.isSolved())
+<<<<<<< HEAD
                   boolean = false;
             }
 
             aux.printAll();
             cout << endl;
+=======
+                  boolean= false;
+            }
 
+            cout << aux << endl;
+>>>>>>> 04517d2d2caeb81fcdeccbaec65c6290a7deba18
             cout << "Solution: ";
 
 
