@@ -76,11 +76,8 @@ int main(int argc, char* argv[]){
          }
          else if (number == 5){
             Rubik aux;
-<<<<<<< HEAD
+
             bool boolean = true;
-=======
-            bool boolean= true;
->>>>>>> 04517d2d2caeb81fcdeccbaec65c6290a7deba18
             cout << endl << "\t";
             printf(GREEN "5. Example of resolution of a random rubik's cube:" RESET "\n");
 
