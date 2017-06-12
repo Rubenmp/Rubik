@@ -45,7 +45,9 @@ F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 Without arguments, the rubik's cube will be read from file or keyboard.
 
 With one argument it will read from this file.
-$ Rubik readable_file.txt
+
+   $ Rubik readable_file.txt
 
 Two arguments, read from first, show the solution on the other.
-$ Rubik readable_file.txt solution.txt
+
+   $ Rubik readable_file.txt solution.txt
