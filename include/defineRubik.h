@@ -660,11 +660,11 @@ void movements();
 
 /**
  * @brief Explication of program's arguments
+ * @param string name of main program
  * @return void
  *
  */
-void arguments();
-
+void arguments(string name);
 
 
 #endif

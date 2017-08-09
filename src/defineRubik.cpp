@@ -1822,6 +1822,23 @@ void Rubik::solve(vector<char>& solution){
    thirdStep(solution); // Bottom face
 }
 
+void Rubik::fileExample(){
+  Rubik rubik = Rubik::randomRubik();
+  rubik.exportRubik(cout);
+  cout << "\nThis file is this rubik's cube:\n";
+  rubik.printAll();
+  cout << "\n\n\tLetters can be in capital letters, lowercase or number in {1, ... , 6}.";
+  cout << "\n\tEach line is a side of Rubik's cube, the program read from ";
+  cout << "left to right \n\tand from top to bottom without spaces, tabulator";
+  cout << "or new lines.";
+  cout << "\n\tEach side is read: top three colours, middle, and down colours.";
+  cout << endl << "\t1 2 3\n\t4 5 6\n\t7 8 9" << endl;
+  cout << "\tOrder: top, left, frontal, right, back and down faces." << endl;
+  cout << "Numbers of sequence with green side in front of you:\n";
+  rubik.printNumbers(cout);
+  cout << endl;
+}
+
 // Input && output
 void Rubik::exportRubik(std::ostream& os) const{
       os << corner[3].up << " " << edge[2].up << " " << corner[2].up << " ";
@@ -2236,19 +2253,19 @@ void guide(){
    rubik.printNumbers(cout);
 
    cout << "\tYou can use three different options: \n\t";
-      printf (WHITE "W/w/1, " RESET);
-      printf (BLACK "O/o/2" RESET " (\"orange\"), ");
-      printf (GREEN "G/g/3, " RESET);
-      printf (RED "R/r/4, " RESET);
-      printf (BLUE "L/l/5, " RESET);
-      printf (YELLOW "Y/y/6 " RESET "\n");
+   printf (WHITE "W/w/1, " RESET);
+   printf (BLACK "O/o/2" RESET " (\"orange\"), ");
+   printf (GREEN "G/g/3, " RESET);
+   printf (RED "R/r/4, " RESET);
+   printf (BLUE "L/l/5, " RESET);
+   printf (YELLOW "Y/y/6 " RESET "\n");
    cout << "\tYou will be able to change the colours." << endl;
 }
 void presentation(){
    cout << "\t";
    printf (BT_ON BLUE " #############################################################" RESET "\n");
    cout << "\t -";
-	printf (BT_ON "This program solves rubik's cubes 3x3 with beginners method" RESET "\n");
+   printf (BT_ON "This program solves rubik's cubes 3x3 with beginners method" RESET "\n");
    cout << "\t";
    printf (BT_ON BLUE " #############################################################" RESET "\n");
 }
@@ -2257,17 +2274,13 @@ void movements(){
   cout << "\t\"FBRLUD\" movements in clockwise, \"fbrlud\" the opposite movement.";
   cout << "\n\tF(ront), B(ack), R(igth), L(eft), U(p), D(own)";
 }
-void arguments(){
-	cout << "\tWithout arguments, the rubik's cube will be read from file or keyboard.\n";
-	cout << "\tWith one argument it will read from this file.\n";
-   printf (BLUE "\t%% Rubik readable_file.txt" RESET);
-	cout << endl << "\tTwo arguments, read from first, show the solution on the other.\n";
-   printf (BLUE "\t%% Rubik readable_file.txt solution.txt" RESET);
-	cout << endl;
-}
-void Rubik::fileExample(){
-   Rubik rubik = Rubik::randomRubik();
-   rubik.exportRubik(cout);
-   cout << "\nThis file is this rubik's cube:\n";
-   rubik.printAll();;
+void arguments(string name){
+	cout << "Usage: " << name << "[option] [<input_file> [<output_file>]]" << endl;
+  cout << "Where options are: \n";
+  cout << "\t-e\t example and explanation of valid <input_file> (<output_file> has the same format)\n";
+  cout << "\t-h\t print this help and exit\n";
+  cout << "\t-i\t interactive mode of resolution, without extra arguments\n";
+  cout << "\t-m\t explain movements\n";
+  cout << "\t-r\t random Rubik's cube solution\n";
+  cout << "\t-s\t show if a Rubik's cube is solved (y[es]/n[o]), need one extra argument with <input_file>" << endl;    
 }
