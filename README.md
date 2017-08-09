@@ -1,5 +1,7 @@
 # Rubik's cube
 
+This program solves Rubik's cube 3x3 with Beginners Method.
+
 ## Introduction
 The rubik's cube will be read from file or keyboard.
 The standard position for the rubik's cube is: green side in front of you and white side up.
@@ -12,8 +14,7 @@ If your rubik's cube has different patterns or colours, look at this:
 The program will read 54 colours, one side each time.
 
 
-## Arguments
-Usage:
+## Usage
 ``` bash
 $ ./Rubik [option] [<input_file> [<output_file>]]
 ```
@@ -58,12 +59,12 @@ y y y y y y y y y
 
 
 ## Movements
-The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.
+The Rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.
 "FBRLUD" movements in clockwise
 "fbrlud" the opposite movement.
 
-    F(ront), B(ack), R(igth), L(eft), U(p), D(own)
+    F(ront) B(ack) R(igth) L(eft) U(p) D(own)
 
-Movements show [here](https://3.bp.blogspot.com/-5y7ekVApbt8/VvJ40lJw88I/AAAAAAAAACw/w4B-XgQTk5A6HPNHOqWRivWTt_cESvFcw/s1600/7997215_f520.jpg)
+As you can see [here](https://hobbylark.com/puzzles/Rubik-Cube-Algorithms):
 
 ![Movements](./img/movements.jpg "Movements")
