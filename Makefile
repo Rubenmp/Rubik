@@ -7,26 +7,26 @@ DIR_LIBS=./lib
 SRC=./src
 OBJ=./obj
 
-all: resolution searchErrors fixErrors
+all: resolution searchBugs fixBugs
 
 resolution: $(OBJ)/resolution.o $(DIR_LIBS)/librubik.a
 	g++ -o $(BIN)/Rubik $< $(LIBS)
 
-searchErrors: $(OBJ)/searchErrors.o $(DIR_LIBS)/librubik.a
-	g++ -o $(BIN)/searchErrors $< $(LIBS)
+searchBugs: $(OBJ)/searchBugs.o $(DIR_LIBS)/librubik.a
+	g++ -o $(BIN)/searchBugs $< $(LIBS)
 
-fixErrors:  $(OBJ)/fixErrors.o $(DIR_LIBS)/librubik.a
-	g++ -o $(BIN)/fixErrors $< $(LIBS)
+fixBugs:  $(OBJ)/fixBugs.o $(DIR_LIBS)/librubik.a
+	g++ -o $(BIN)/fixBugs $< $(LIBS)
 
 
 
 $(OBJ)/resolution.o: $(SRC)/resolution.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
 
-$(OBJ)/searchErrors.o: $(SRC)/searchErrors.cpp
+$(OBJ)/searchBugs.o: $(SRC)/searchBugs.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
 
-$(OBJ)/fixErrors.o: $(SRC)/fixErrors.cpp
+$(OBJ)/fixBugs.o: $(SRC)/fixBugs.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
 
 

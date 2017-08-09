@@ -48,6 +48,7 @@ The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2
 F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 
 ![Movements](./img/movements.jpg "Movements")
+
 [Image from](http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
 
 ## Arguments
