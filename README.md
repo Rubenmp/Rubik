@@ -27,6 +27,7 @@ You can use three different options (simultaneously is possible not recommended)
 You will be able to change the colours. The program will show:
 
 ![Colours](./img/colours.jpeg "Colours")
+
 It would be represented as
 ``` bash
 w w w w w w w w w
@@ -46,9 +47,8 @@ The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2
 
 F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 
-    <center><img src="./img/movements.jpg"></center>
-    <center>[Image from](http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)</center>
-
+![Movements](./img/movements.jpg "Movements")
+[Image from](http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
 
 ## Arguments
 Without arguments, the rubik's cube will be read from file or keyboard.
