@@ -2277,7 +2277,7 @@ void movements(){
 void arguments(string name){
 	cout << "Usage: " << name << "[option] [<input_file> [<output_file>]]" << endl;
   cout << "Where options are: \n";
-  cout << "\t-e\t example and explanation of valid <input_file> (<output_file> has the same format)\n";
+  cout << "\t-e\t explanation of valid <input_file> (<output_file> has the same format)\n";
   cout << "\t-h\t print this help and exit\n";
   cout << "\t-i\t interactive mode of resolution, without extra arguments\n";
   cout << "\t-m\t explain movements\n";

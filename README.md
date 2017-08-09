@@ -1,8 +1,4 @@
 # Rubik's cube
-## History
-Rubik's Cube is a 3-D combination puzzle invented in 1974 by Hungarian sculptor and professor of architecture [Ernő Rubik](https://en.wikipedia.org/wiki/Ern%C5%91_Rubik). Originally called the Magic Cube.
-
-In a classic Rubik's Cube, each of the six faces is covered by nine stickers, each of one of six solid colours: white, red, blue, orange, green, and yellow. In currently sold models, white is opposite yellow, blue is opposite green, and orange is opposite red, and the red, white and blue are arranged in that order in a clockwise arrangement.
 
 ## Introduction
 The rubik's cube will be read from file or keyboard.
@@ -16,7 +12,7 @@ If your rubik's cube has different patterns or colours, look at this:
 The program will read 54 colours, one side each time.
 
 ## Colours
-You can use three different options (simultaneously is possible not recommended):
+You can use three different options (simultaneously is possible, not recommended):
    W/w/1 for white
    O/o/2 for orange
    G/g/3 for green
@@ -24,11 +20,11 @@ You can use three different options (simultaneously is possible not recommended)
    L/l/5 for blue
    Y/y/6 for yellow
 
-You will be able to change the colours. The program will show:
+You will be able to change the colours if you made mistakes. The program represents Rubik's cube in two dimensions with green side in front of user (centered blue sticker represents that the colour of the side is blue):
 
 ![Colours](./img/colours.jpeg "Colours")
 
-It would be represented as
+It would be represented in a file as
 ``` bash
 w w w w w w w w w
 o o o o o o o o o
@@ -52,14 +48,16 @@ F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 [Image from](http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
 
 ## Arguments
-Without arguments, the rubik's cube will be read from file or keyboard.
-
-With one argument it will read from this file.
+Usage:
 ``` bash
-   $ Rubik <readable_file>
+$ ./Rubik [option] [<input_file> [<output_file>]]
 ```
+<input_file> represents a Rubik's cube which we want to solve, <output_file> is the optional file to send the solution.
 
-Two arguments, read from first, show the solution on the other.
-``` bash
-   $ Rubik <readable_file> <solution>
-```
+| Option | Description |
+|----|--
+| -e | explanation of valid <input_file> (<output_file> has the same format) |
+| -h | print this help and exit |
+| -i | interactive mode of resolution, without extra arguments |
+| -m | explain valid movements |
+| -r | random Rubik's cube solution |
