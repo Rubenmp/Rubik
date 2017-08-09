@@ -1205,9 +1205,9 @@ int Rubik::logicErrors(){
    ++vector[equivalentNumber(center[3].center)];
    ++vector[equivalentNumber(center[4].center)];
    ++vector[equivalentNumber(center[5].center)];
-   for (int i=1; i<7;++i){
+   for (int i=1; i<7; ++i){
       if (vector[i] != 1)
-	      valid= -1;
+	      valid = -1;
    }
 
    // Edge
@@ -1236,13 +1236,15 @@ int Rubik::logicErrors(){
       ++vector[equivalentNumber(edge[10].down)];
       ++vector[equivalentNumber(edge[11].up)];
       ++vector[equivalentNumber(edge[11].down)];
+   
+      for (int i=1; i<7; ++i){
+        if (vector[i] != 5)
+          valid = -2;
+      }
    }
-   for (int i=1; i<7;++i){
-      if (vector[i] != 5)
-	      valid = -2;
-   }
+   
    // Corners
-   if ( (valid != -1) && (valid != 0) ){
+   if ( (valid != -1) && (valid != -2) ){
       ++vector[equivalentNumber(corner[0].left)];
       ++vector[equivalentNumber(corner[0].right)];
       ++vector[equivalentNumber(corner[0].up)];
@@ -1267,12 +1269,13 @@ int Rubik::logicErrors(){
       ++vector[equivalentNumber(corner[7].left)];
       ++vector[equivalentNumber(corner[7].right)];
       ++vector[equivalentNumber(corner[7].up)];
+   
+      for (int i=1; i<7; ++i){
+        if (vector[i] != 9)
+          valid = -3;
+      }
    }
-   for (int i=1; i<7; ++i){
-      if (vector[i] != 9)
-	      valid = -3;
-   }
-
+   
    return valid;
 }
 void Rubik::correctMistakes(){
@@ -1824,17 +1827,18 @@ void Rubik::solve(vector<char>& solution){
 
 void Rubik::fileExample(){
   Rubik rubik = Rubik::randomRubik();
+  cout << "Input file example:";
   rubik.exportRubik(cout);
-  cout << "\nThis file is this rubik's cube:\n";
+  cout << "\nThis file represents this Rubik's cube:\n";
   rubik.printAll();
-  cout << "\n\n\tLetters can be in capital letters, lowercase or number in {1, ... , 6}.";
-  cout << "\n\tEach line is a side of Rubik's cube, the program read from ";
-  cout << "left to right \n\tand from top to bottom without spaces, tabulator";
+  cout << "\n\nLetters can be in capital letters, lowercase or number in {1, ... , 6}.";
+  cout << "\nEach line is a side of Rubik's cube, the program read from ";
+  cout << "left to right and from top to bottom without spaces, tabulator ";
   cout << "or new lines.";
-  cout << "\n\tEach side is read: top three colours, middle, and down colours.";
+  cout << "\nEach side is read first top three colours, then middle ones, and down colours:";
   cout << endl << "\t1 2 3\n\t4 5 6\n\t7 8 9" << endl;
-  cout << "\tOrder: top, left, frontal, right, back and down faces." << endl;
-  cout << "Numbers of sequence with green side in front of you:\n";
+  cout << "Order: top, left, frontal, right, back and down faces." << endl;
+  cout << "Numbers of sequence with green side in front of you are:\n";
   rubik.printNumbers(cout);
   cout << endl;
 }
@@ -2024,7 +2028,7 @@ void Rubik::printAll() const{
    cout << "                  | "; printColour(corner[7].up);
    cout << " | "; printColour(edge[6].up);
    cout << " | "; printColour(corner[6].up); cout << " |\n";
-   cout << "                  _____________\n";
+   cout << "                  _____________" << endl;
 }
 
 void Rubik::readSticker(char& c, std::istream& is){
@@ -2270,17 +2274,18 @@ void presentation(){
    printf (BT_ON BLUE " #############################################################" RESET "\n");
 }
 void movements(){
-  cout << "\tThe rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.\n";
-  cout << "\t\"FBRLUD\" movements in clockwise, \"fbrlud\" the opposite movement.";
-  cout << "\n\tF(ront), B(ack), R(igth), L(eft), U(p), D(own)";
+  cout << "The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.";
+  cout << " \"FBRLUD\" movements in clockwise, \"fbrlud\" the opposite movement.";
+  cout << "\nLetters come from: F(ront), B(ack), R(igth), L(eft), U(p), D(own)" << endl;
 }
 void arguments(string name){
-	cout << "Usage: " << name << "[option] [<input_file> [<output_file>]]" << endl;
+	cout << "Usage: " << name << " [option] [<input_file> [<output_file>]]" << endl;
   cout << "Where options are: \n";
-  cout << "\t-e\t explanation of valid <input_file> (<output_file> has the same format)\n";
+  cout << "\t-e\t explanation of valid <input_file> (same format for <output_file>)\n";
   cout << "\t-h\t print this help and exit\n";
   cout << "\t-i\t interactive mode of resolution, without extra arguments\n";
   cout << "\t-m\t explain movements\n";
-  cout << "\t-r\t random Rubik's cube solution\n";
-  cout << "\t-s\t show if a Rubik's cube is solved (y[es]/n[o]), need one extra argument with <input_file>" << endl;    
+  cout << "\t-R\t random Rubik's cube solution\n";
+  cout << "\t-r\t generate a random Rubik's cube\n";
+  cout << "\t-s\t show if a Rubik's cube is solved (y[es]/n[o]), need <input_file>" << endl;    
 }

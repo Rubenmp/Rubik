@@ -56,8 +56,10 @@ $ ./Rubik [option] [<input_file> [<output_file>]]
 
 | Option | Description |
 |----|--
-| -e | explanation of valid <input_file> (<output_file> has the same format) |
+| -e | explanation of valid <input_file> (same format for <output_file>) |
 | -h | print this help and exit |
 | -i | interactive mode of resolution, without extra arguments |
 | -m | explain valid movements |
-| -r | random Rubik's cube solution |
+| -R | random Rubik's cube solution |
+| -r | generate a random Rubik's cube |
+| -s | show if a Rubik's cube is solved (y[es]/n[o]), need <input_file> |

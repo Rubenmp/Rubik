@@ -21,31 +21,28 @@ int main(int argc, char* argv[]){
    
    if ( argc == 1 ) {
      arguments(argv[0]);
-     cerr << "Error: no arguments.\n";
      return 1;    
    }
    else if (argc <= 4){
      // Probably there are better implementations to handle options
      if (argv[1][0] == '-'){
        if (strlen(argv[1]) != 2){
-         if (argv[1][1] == 's' && argc == 3){
-           ifstream is;
-           is.open(argv[2]);
-           
-           if (!is){
-             cerr << "Error: not readable file " << argv[2] << endl;
-             return 1;
-           }
-           is >> rubik; // Read cube
-           if (rubik.isSolved())
-             cout << "y";
-           else
-             cout << "n";
-         }
-         else{
-           cerr << "Error: too many options " << argv[1] << endl;
+         cerr << "Error: too many options " << argv[1] << endl;
+         return 1;
+       }
+       else if (argv[1][1] == 's' && argc == 3){
+         ifstream is;
+         is.open(argv[2]);
+         
+         if (!is){
+           cerr << "Error: not readable file " << argv[2] << endl;
            return 1;
          }
+         is >> rubik; // Read cube
+         if (rubik.isSolved())
+           cout << "y" << endl;
+         else
+           cout << "n" << endl;
        }
        else{ // See options
          if (argv[1][1] == 'e')
@@ -101,26 +98,24 @@ int main(int argc, char* argv[]){
          }
          else if (argv[1][1] == 'm') // Explain movements
            movements();
-         else if (argv[1][1] == 'r'){ // Random solution
+         else if (argv[1][1] == 'R'){ // Random solution
            bool boolean = true;
-           cout << endl << "\t";
-           printf(GREEN "5. Example of resolution of a random rubik's cube:" RESET "\n");
-
+           Rubik aux;
            while (boolean){
              /*
                This is a trick, it will not fail ever... or you will not notice
                (Supposedly it will never repeat the loop if program is correct)
               */
              rubik = Rubik::randomRubik();
-
+             aux = rubik;
              rubik.solve(solution);
+             
              if (rubik.isSolved())
                boolean = false;
            }
-
+           aux.printAll();
            cout << endl;
            cout << "Solution: ";
-
            for (unsigned int i=0; i<solution.size(); ++i)
              cout << solution[i];
 
@@ -128,6 +123,20 @@ int main(int argc, char* argv[]){
            rubik.printAll();
            cout << endl;
 
+         }
+         else if (argv[1][1] == 'r'){ // Random Rubik's cube
+           rubik = Rubik::randomRubik();
+           rubik.exportRubik();
+         }
+         else{
+           if (argv[1][1] == 's'){
+             cerr << "Error: -s option needs extra argument <input_file>" << endl;
+             return 1;
+           }
+           else{
+             cerr << "Error: invalid argument" << endl;
+             return 1;
+           }
          }
        }
      }
@@ -169,6 +178,6 @@ int main(int argc, char* argv[]){
       return 1;
    }
 
-   cout << endl;
+   flush(cout);
    return 0;
 }
