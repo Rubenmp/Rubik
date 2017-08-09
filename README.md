@@ -16,7 +16,7 @@ If your rubik's cube has different patterns or colours, look at this:
 The program will read 54 colours, one side each time.
 
 ## Colours
-You can use three different options:
+You can use three different options (simultaneously is possible not recommended):
    W/w/1 for white
    O/o/2 for orange
    G/g/3 for green
@@ -27,6 +27,16 @@ You can use three different options:
 You will be able to change the colours. The program will show:
 
 ![Colours](./img/colours.jpeg "Colours")
+It would be represented as
+``` bash
+w w w w w w w w w
+o o o o o o o o o
+g g g g g g g g g
+r r r r r r r r r
+l l l l l l l l l
+y y y y y y y y y
+
+```
 
 
 ## Movements
@@ -36,18 +46,19 @@ The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2
 
 F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 
-![Movements](./img/movements.jpg "Movements")
+    <center><img src="./img/movements.jpg"></center>
+    <center>[Image from](http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)</center>
 
-[Image from]
-(http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
 
 ## Arguments
 Without arguments, the rubik's cube will be read from file or keyboard.
 
 With one argument it will read from this file.
-
-   $ Rubik readable_file.txt
+``` bash
+   $ Rubik <readable_file>
+```
 
 Two arguments, read from first, show the solution on the other.
-
-   $ Rubik readable_file.txt solution.txt
+``` bash
+   $ Rubik <readable_file> <solution>
+```

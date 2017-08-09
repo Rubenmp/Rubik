@@ -7,11 +7,7 @@ DIR_LIBS=./lib
 SRC=./src
 OBJ=./obj
 
-all: dir resolution searchErrors fixErrors
-
-dir:
-	mkdir -p $(DIR_LIBS)
-	mkdir -p $(OBJ)
+all: resolution searchErrors fixErrors
 
 resolution: $(OBJ)/resolution.o $(DIR_LIBS)/librubik.a
 	g++ -o $(BIN)/Rubik $< $(LIBS)
@@ -24,7 +20,6 @@ fixErrors:  $(OBJ)/fixErrors.o $(DIR_LIBS)/librubik.a
 
 
 
-
 $(OBJ)/resolution.o: $(SRC)/resolution.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
 
@@ -33,7 +28,6 @@ $(OBJ)/searchErrors.o: $(SRC)/searchErrors.cpp
 
 $(OBJ)/fixErrors.o: $(SRC)/fixErrors.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
-
 
 
 
@@ -55,7 +49,7 @@ documentation:
 clean:
 	@ echo "Cleaning..."
 	rm -f $(OBJ)/*.o $(DIR_LIBS)/lib*.a ./doc/html/*
-	find . -regex ".*~" -exec rm -r {} \;
+	find . -regex ".*~" -exec rm -r {} \; # Auxiliary files
 
 
 mrproper: clean
