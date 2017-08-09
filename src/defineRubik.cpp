@@ -50,7 +50,7 @@ void Rubik::explainMovements(vector<char>& solution, unsigned int& movement) con
       else if (solution[movement] == 'd')
 	      cout << "d --> Move down side left.\n\n";
 
-	   movement++;
+	   ++movement;
    }
 
 }
@@ -103,11 +103,11 @@ int Rubik::searchEdge(const char &ar, const char &ab) const{
 int Rubik::searchCorner(const char& a, const char& iz, const char& de) const{
    int position;
    if ( ( (corner[0].up == a) && (corner[0].left == iz) && (corner[0].right == de) ) ||
-             ( (corner[0].up == a) && (corner[0].left == de) && (corner[0].right == iz) ) ||
-             ( (corner[0].up == iz) && (corner[0].left == a) && (corner[0].right == de) ) ||
-             ( (corner[0].up == de) && (corner[0].left == iz) && (corner[0].right == a) ) ||
-             ( (corner[0].up == de) && (corner[0].left == a) && (corner[0].right == iz) ) ||
-             ( (corner[0].up == iz) && (corner[0].left == de) && (corner[0].right == a) ) )
+        ( (corner[0].up == a) && (corner[0].left == de) && (corner[0].right == iz) ) ||
+        ( (corner[0].up == iz) && (corner[0].left == a) && (corner[0].right == de) ) ||
+        ( (corner[0].up == de) && (corner[0].left == iz) && (corner[0].right == a) ) ||
+        ( (corner[0].up == de) && (corner[0].left == a) && (corner[0].right == iz) ) ||
+        ( (corner[0].up == iz) && (corner[0].left == de) && (corner[0].right == a) ) )
       position = 0;
    else if ( ( (corner[1].up == a) && (corner[1].left == iz) && (corner[1].right == de) ) ||
              ( (corner[1].up == a) && (corner[1].left == de) && (corner[1].right == iz) ) ||
@@ -160,6 +160,7 @@ int Rubik::searchCorner(const char& a, const char& iz, const char& de) const{
       position = 7;
    else
       cout << "Problem with corner (" << a << "," << iz << "," << de << ").\n";
+
    return position;
 }
 void Rubik::sequence(const string& sec, vector<char>& solution){
@@ -188,10 +189,8 @@ void Rubik::sequence(const string& sec, vector<char>& solution){
          B(solution);
       else if ( sec[i] == 'b')
          b(solution);
-      //else{
-      //   ofstream of("fail.txt");
-      //   of << sec[i];
-      //}
+      else
+        cerr << "Error: invalid movement " << sec[i] << endl;
    }
 }
 
@@ -520,7 +519,6 @@ void Rubik::cornersFirstStep(vector<char>& solution){
       else if (corner[7].left == 'w') // rD2R
          sequence("rDDR", solution);
    }
-
 
 
    position = searchCorner('w', 'r', 'l'); // White, red and blue
@@ -1288,7 +1286,7 @@ void Rubik::correctMistakes(){
          cin >> number;
       }while(number < 1 || number > 54);
 
-      cout << "And the new colour is... [w, b, g, r, l, y]\n";
+      cout << "And the new colour is... [w, o, g, r, l, y]\n";
       if (number == 1)
          readSticker(corner[3].up);
       else if (number == 2)
@@ -1404,7 +1402,7 @@ void Rubik::correctMistakes(){
          readSticker(corner[6].up);
 
       printAll();
-      cout << "Do you want to change other colour?    ['Y'/'y' | 'O'/'o']\n";
+      cout << "Do you want to change other colour? [y/n]\n";
       cin >> letter;
    }while (letter == 'y' || letter == 'Y');
 }
@@ -1762,12 +1760,10 @@ void Rubik::solveStepByStep(vector<char>& solution){
 
    Rubik aux(*this);
    aux.solve(solution);
-   cout << "You will need " << solution.size() << " movements to solve it.\n";
-
-   cout << "The rubik's cube has 12 different movements (and double movements: F2, B2, R2, L2, U2, D2).\n";
+   cout << "You will need " << solution.size() << " movements to solve it.";
+   cout << "Rubik's cube has 12 different movements (and double movements: F2, B2, R2, L2, U2, D2). ";
    cout << "\"FBRLUD\" movements indicates clockwise, \"fbrlud\" the opposite movement";
-   cout << "\n\t F(ront), B(ack), R(igth), L(eft), U(p), D(own)";
-
+   cout << "\n\t F(ront), B(ack), R(igth), L(eft), U(p), D(own) \n";
    cout << "You will have 3 seconds per movement, there will be pauses to check.\n";
    cout << "Press any key: ";
    cin >> xar; cin.ignore(1024,'\n');

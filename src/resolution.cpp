@@ -64,7 +64,7 @@ int main(int argc, char* argv[]){
              
              while (repeat){
                strcpy(anyKey, "");
-               cout << "Create a file \"./data/rubik.dat\" with colours in valid order (see -e for explanation of valid file).\n";
+               cout << "Create a file \"./data/rubik.dat\" with colours in valid order (see -e for explanation of valid file). ";
                cout << "Press any key to continue.\n";
                cin.getline(anyKey, '\n');
                is.open("./data/rubik.dat");
@@ -87,7 +87,7 @@ int main(int argc, char* argv[]){
            
            rubik.printAll();
            do{
-             cout << "Do you want to correct any position (y/Y) | (n/N)?\n";
+             cout << "Do you want to correct any position [y/n]?\n";
              cin >> character;
            }while (tolower(character) != 'y' && tolower(character) != 'n');
            
@@ -122,7 +122,6 @@ int main(int argc, char* argv[]){
            cout << endl << endl;
            rubik.printAll();
            cout << endl;
-
          }
          else if (argv[1][1] == 'r'){ // Random Rubik's cube
            rubik = Rubik::randomRubik();
@@ -158,7 +157,9 @@ int main(int argc, char* argv[]){
          else if (argc == 3){
            ofstream outFile(argv[2]);
            if (outFile.is_open()) {
-             rubik.exportSolution(outFile);
+             for (unsigned int i=0; i<solution.size(); ++i)
+               outFile << solution[i];
+             outFile << endl;
              outFile.close();
            }
            else{

@@ -62,8 +62,8 @@ The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2
 "FBRLUD" movements in clockwise
 "fbrlud" the opposite movement.
 
-F(ront), B(ack), R(igth), L(eft), U(p), D(own)
+    F(ront), B(ack), R(igth), L(eft), U(p), D(own)
+
+Movements show [here](https://3.bp.blogspot.com/-5y7ekVApbt8/VvJ40lJw88I/AAAAAAAAACw/w4B-XgQTk5A6HPNHOqWRivWTt_cESvFcw/s1600/7997215_f520.jpg)
 
 ![Movements](./img/movements.jpg "Movements")
-
-[Image from](http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
