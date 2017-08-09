@@ -11,6 +11,27 @@ If your rubik's cube has different patterns or colours, look at this:
 
 The program will read 54 colours, one side each time.
 
+
+## Arguments
+Usage:
+``` bash
+$ ./Rubik [option] [<input_file> [<output_file>]]
+```
+<input_file> represents a Rubik's cube which we want to solve, <output_file> is the optional file to send the solution.
+
+![Demo Gurú](./img/rubik.gif)
+
+| Option | Description |
+|----|--
+| -e | explanation of valid <input_file> (same format for <output_file>) |
+| -h | print this help and exit |
+| -i | interactive mode of resolution, without extra arguments |
+| -m | explain valid movements |
+| -R | random Rubik's cube solution |
+| -r | generate a random Rubik's cube |
+| -s | show if a Rubik's cube is solved (y[es]/n[o]), need <input_file> |
+
+
 ## Colours
 You can use three different options (simultaneously is possible, not recommended):
    W/w/1 for white
@@ -46,20 +67,3 @@ F(ront), B(ack), R(igth), L(eft), U(p), D(own)
 ![Movements](./img/movements.jpg "Movements")
 
 [Image from](http://rubiksolucion.blogspot.com.es/2012/07/notacion-cubo-de-rubik-3x3x3.html)
-
-## Arguments
-Usage:
-``` bash
-$ ./Rubik [option] [<input_file> [<output_file>]]
-```
-<input_file> represents a Rubik's cube which we want to solve, <output_file> is the optional file to send the solution.
-
-| Option | Description |
-|----|--
-| -e | explanation of valid <input_file> (same format for <output_file>) |
-| -h | print this help and exit |
-| -i | interactive mode of resolution, without extra arguments |
-| -m | explain valid movements |
-| -R | random Rubik's cube solution |
-| -r | generate a random Rubik's cube |
-| -s | show if a Rubik's cube is solved (y[es]/n[o]), need <input_file> |
