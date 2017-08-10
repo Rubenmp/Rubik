@@ -2281,7 +2281,7 @@ void arguments(string name){
   cout << "\t-e\t explanation of valid <input_file> (same format for <output_file>)\n";
   cout << "\t-h\t print this help and exit\n";
   cout << "\t-i\t interactive mode of resolution, without extra arguments\n";
-  cout << "\t-M<m>\t execute movement <m>(in {U,u,D,d,L,l,R,r,F,f,B,b}) to cube in <input_file> (it's modified)";
+  cout << "\t-MX\t execute movement X(in {U,u,D,d,L,l,R,r,F,f,B,b}) to cube in <input_file> (modified)";
   cout << "\t-m\t explain movements\n";
   cout << "\t-p\t print cube in human-readable format, need <input_file>";
   cout << "\t-r\t random Rubik's cube solution\n";

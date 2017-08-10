@@ -27,7 +27,7 @@ $ ./Rubik [option] [<input_file> [<output_file>]]
 | -e | explanation of valid <input_file> (same format for <output_file>) |
 | -h | print this help and exit |
 | -i | interactive mode of resolution, without extra arguments |
-|-M<m>| execute movement <m>(in {U,u,D,d,L,l,R,r,F,f,B,b}) to cube in <input_file> (it's modified) |
+|-MX| execute movement X(in {U,u,D,d,L,l,R,r,F,f,B,b}) to cube in <input_file> (modified) |
 | -m | explain valid movements |
 | -p | print cube in human-readable format, need <input_file> |
 | -R | random Rubik's cube solution |
