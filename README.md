@@ -79,3 +79,5 @@ Ordered by difficulty:
     * Implement advanced methods as Fridrich in 3x3
 
     * Solve 4x4, 5x5, [megamix](https://www.flipkart.com/shengshou-megamix/p/itmdrbgnevm7yhsd), who knows...
+
+For any doubt or suggestion you can [contact me](https://github.com/Rubenmp) or [create an issue](https://github.com/Rubenmp/Rubik/issues) respectively.
