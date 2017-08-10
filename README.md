@@ -73,12 +73,12 @@ The Rubik's cube has 12 main movements and 6 double movements: F2, B2, R2, L2, U
 ## Future work
 Ordered by difficulty:
 
-    * -t option to show tricks for pretty patterns
+* -t option to show tricks for pretty patterns
 
-    * -l <input_file> option to show logic errors in a Rubik's cube (like invalid permutations that made the cube unresolvable) and how to solve it)
+* -l <input_file> option to show logic errors in a Rubik's cube (like invalid permutations that made the cube unresolvable) and how to solve it [self implemented]
     
-    * Implement advanced methods as Fridrich in 3x3
+* Implement advanced methods as Fridrich in 3x3
 
-    * Solve 4x4, 5x5, [megamix](https://www.flipkart.com/shengshou-megamix/p/itmdrbgnevm7yhsd), who knows...
+* Solve 4x4, 5x5, [megamix](https://www.flipkart.com/shengshou-megamix/p/itmdrbgnevm7yhsd), who knows...
 
 For any doubt or suggestion you can [contact me](https://github.com/Rubenmp) or [create an issue](https://github.com/Rubenmp/Rubik/issues) respectively.
