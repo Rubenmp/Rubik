@@ -54,7 +54,7 @@ void Rubik::explainMovements(vector<char>& solution, unsigned int& movement) con
    }
 
 }
-int Rubik::equivalentNumber(const char &c) const{
+int Rubik::equivalentNumber(const char& c) const{
    int number = 0;
    if (tolower(c) == 'w')
       number = 1;
@@ -71,7 +71,7 @@ int Rubik::equivalentNumber(const char &c) const{
 
   return number;
 }
-int Rubik::searchEdge(const char &ar, const char &ab) const{
+int Rubik::searchEdge(const char& ar, const char& ab) const{
    int position;
    if( (edge[0].up == ar && edge[0].down == ab) || (edge[0].up == ab && edge[0].down == ar) )
       position = 0;
@@ -1088,15 +1088,15 @@ Rubik::Rubik(){
    corner[4].up = edge[4].up = corner[5].up = edge[7].up = center[5].center = edge[5].up = 'y';
    corner[7].up = edge[6].up = corner[6].up = 'y';
 }
-Rubik::Rubik(const Rubik &rubik){
+Rubik::Rubik(const Rubik& rubik){
    *this = rubik;
 }
 
-void Rubik::mixRubik(){
+void Rubik::mixRubik(const int& number){
    int num;
    srand(time(NULL));
    vector<char> cad;
-
+   num = number;
    for (int i=0; i<300; ++i){
       num = 1 + rand()%(12);
       if (num == 1)
@@ -1125,7 +1125,7 @@ void Rubik::mixRubik(){
 	      d(cad);
    }
 }
-bool Rubik::isSolved(){
+bool Rubik::isSolved() const{
    bool success;
    if((corner[3].up == 'w')     &&
       (edge[2].up == 'w')       &&
@@ -1192,7 +1192,7 @@ bool Rubik::isSolved(){
 
    return success;
 }
-int Rubik::logicErrors(){
+int Rubik::logicErrors() const{
    int valid = 0;
    int vector[7] = {0};
 
@@ -1814,11 +1814,13 @@ void Rubik::solveStepByStep(vector<char>& solution){
    printAll();
    printf (BT_ON "\n\n\t---> ¡¡ Good job :D !! <---\n" RESET);
 }
-void Rubik::solve(vector<char>& solution){
+void Rubik::solve(vector<char>& solution, const char &method){
    solution.clear();
-   firstStep(solution); // White face
-   secondStep(solution); // Middle step
-   thirdStep(solution); // Bottom face
+   if (method == 'B'){ // Beginners method
+     firstStep(solution); // White face
+     secondStep(solution); // Middle step
+     thirdStep(solution); // Bottom face
+   }
 }
 
 void Rubik::fileExample(){
@@ -1879,7 +1881,7 @@ void Rubik::exportSupervisedSolution(std::ostream& os) const{
    Rubik aux = *this;
    aux.solve(solution);
 
-   while ( movement != (solution.size()-1) ){
+   while (movement != (solution.size()-1)){
       os << "- (" << movement + 1 << ") ";
       if (solution[movement] == 'F')
          os << "F --> Move frontal face in clockwise.\n\n";
@@ -1925,7 +1927,7 @@ void Rubik::printColour(const char& c) const{
    else if (colour == 'y')
       printf(YELLOW "Y" RESET);
 }
-void Rubik::printNumbers(std::ostream &os){
+void Rubik::printNumbers(std::ostream& os){
    os << "                     _______________ \n";
    os << "                     | 01 | 02 | 03 |\n";
    os << "                     _______________ \n";

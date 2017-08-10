@@ -91,7 +91,7 @@ class Rubik{
         * @brief Calculate number asociated
         * @param const char& c
         * @return int asociated
-        * @retval [0, 5]
+        * @retval [1, 6]
         * @pre c limited with rubik's colours
         *
         */
@@ -125,13 +125,13 @@ class Rubik{
       /**
         * @brief Execution of sec.size() movements in string sec
         * @param string sec string with movements
-        * @param movements with previous movements, we will add chars in sec in movements
+        * @param vector<char>& solution where we will append movements from sec
         * @return void
         * @pre Valid chars in string
         * @see explainMovements()
         *
         */
-      void sequence(const string& sec, vector<char>& movements);
+      void sequence(const string& sec, vector<char>& solution);
 
 
 
@@ -244,11 +244,12 @@ class Rubik{
 
       /**
         * @brief It builds a random rubik
+        * @param const int &number of random movements
         * @return void
         * \note It is modified
         *
         */
-      void mixRubik();
+      void mixRubik(const int& number=300);
 
       /**
         * @brief Check if our rubik's cube is solved
@@ -256,7 +257,7 @@ class Rubik{
         * @see validRubik()
         *
         */
-      bool isSolved();
+      bool isSolved() const;
 
       /**
         * @brief Check if there are logic errors in colour distribution
@@ -266,7 +267,7 @@ class Rubik{
         * @retval -3 wrong corners
         *
         */
-      int logicErrors();
+      int logicErrors() const;
 
       /**
         * @brief Error modifier
@@ -455,7 +456,7 @@ class Rubik{
         * @see solveStepByStep()
         *
         */
-      void solve(vector<char>& solution);
+      void solve(vector<char>& solution, const char& method='B');
 
 
       // Input && output
@@ -494,7 +495,7 @@ class Rubik{
         * @see exportSolution()
         *
         */
-      void exportSupervisedSolution(std::ostream &os=cout) const;
+      void exportSupervisedSolution(std::ostream& os=cout) const;
 
       /**
         * @brief Print sticker with specific colour
