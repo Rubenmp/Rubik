@@ -27,7 +27,9 @@ $ ./Rubik [option] [<input_file> [<output_file>]]
 | -e | explanation of valid <input_file> (same format for <output_file>) |
 | -h | print this help and exit |
 | -i | interactive mode of resolution, without extra arguments |
+| -M<mov> | execute <mov>(in {U,u,D,d,L,l,R,r,F,f,B,b}) to cube in <input_file> (it's modified) |
 | -m | explain valid movements |
+| -p | print cube in human-readable format, need <input_file> |
 | -R | random Rubik's cube solution |
 | -r | generate a random Rubik's cube |
 | -s | show if a Rubik's cube is solved (y[es]/n[o]), need <input_file> |
@@ -59,12 +61,8 @@ y y y y y y y y y
 
 
 ## Movements
-The Rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.
-"FBRLUD" movements in clockwise
-"fbrlud" the opposite movement.
+The Rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2. "FBRLUD" movements in clockwise and "fbrlud" the opposite movement. As you can see [here](https://hobbylark.com/puzzles/Rubik-Cube-Algorithms):
 
     F(ront) B(ack) R(igth) L(eft) U(p) D(own)
-
-As you can see [here](https://hobbylark.com/puzzles/Rubik-Cube-Algorithms):
 
 ![Movements](./img/movements.jpg "Movements")

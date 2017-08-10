@@ -17,9 +17,10 @@ int main(int argc, char* argv[]){
    Rubik rubik;
    char character;
    vector<char> solution;
+
    // Options
-   
-   if ( argc == 1 ) {
+   if (argc == 1) {
+     // Print help and exit
      arguments(argv[0]);
      return 1;    
    }
@@ -27,10 +28,62 @@ int main(int argc, char* argv[]){
      // Probably there are better implementations to handle options
      if (argv[1][0] == '-'){
        if (strlen(argv[1]) != 2){
-         cerr << "Error: too many options " << argv[1] << endl;
-         return 1;
+         if (argv[1][1] == 'M'){ // Execute movement
+           ifstream is;
+           is.open(argv[2]);
+         
+           if (!is){
+             cerr << "Error: not readable file " << argv[2] << endl;
+             return 1;
+           }
+           is >> rubik; // Read cube
+           is.close();
+
+           char mov = argv[1][2];
+           if (mov == 'F')
+             rubik.F(solution);
+           else if (mov == 'f')
+             rubik.f(solution);
+           else if (mov == 'B')
+             rubik.B(solution);
+           else if (mov == 'b')
+             rubik.b(solution);
+           else if (mov == 'R')
+             rubik.R(solution);
+           else if (mov == 'r')
+             rubik.r(solution);
+           else if (mov == 'L')
+             rubik.L(solution);
+           else if (mov == 'l')
+             rubik.l(solution);
+           else if (mov == 'U')
+             rubik.U(solution);
+           else if (mov == 'u')
+             rubik.u(solution);
+           else if (mov == 'D')
+             rubik.D(solution);
+           else if (mov == 'd')
+             rubik.d(solution);
+           else{
+             cerr << "Error: invalid movement (" << mov << ") to execute." << endl;
+             return 1;
+           }
+           ofstream os;
+           os.open(argv[2]);
+           
+           if (!os){
+             cerr << "Error: not writable file " << argv[2] << endl;
+             return 1;
+           }
+           os << rubik; // Write cube
+           os.close();
+         }
+         else{
+           cerr << "Error: too many options " << argv[1] << endl;
+           return 1;
+         }
        }
-       else if (argv[1][1] == 's' && argc == 3){
+       else if ((argv[1][1] == 's' || argv[1][1] == 'p') && argc == 3){
          ifstream is;
          is.open(argv[2]);
          
@@ -39,10 +92,15 @@ int main(int argc, char* argv[]){
            return 1;
          }
          is >> rubik; // Read cube
-         if (rubik.isSolved())
-           cout << "y" << endl;
+         is.close();
+         if (argv[1][1] == 's'){
+           if (rubik.isSolved())
+             cout << "y" << endl;
+           else
+             cout << "n" << endl;
+         }
          else
-           cout << "n" << endl;
+           rubik.printAll();
        }
        else{ // See options
          if (argv[1][1] == 'e')

@@ -285,7 +285,7 @@ class Rubik{
         * @see r()
         *
         */
-      void R (vector<char>& solution);
+      void R(vector<char>& solution);
 
       /**
         * @brief Move right side backward two times
@@ -302,7 +302,7 @@ class Rubik{
         * @see R()
         *
         */
-      void r (vector<char>& solution);
+      void r(vector<char>& solution);
 
       /**
         * @brief Move left side to you
@@ -311,7 +311,7 @@ class Rubik{
         * @see l()
         *
         */
-      void L (vector<char>& solution);
+      void L(vector<char>& solution);
 
       /**
         * @brief  Move left side to you two times
@@ -328,7 +328,7 @@ class Rubik{
         * @see L()
         *
         */
-      void l (vector<char>& solution);
+      void l(vector<char>& solution);
 
       /**
         * @brief Move down side right
@@ -337,7 +337,7 @@ class Rubik{
         * @see d()
         *
         */
-      void D (vector<char>& solution);
+      void D(vector<char>& solution);
 
       /**
         * @brief Move down side right two times
@@ -354,7 +354,7 @@ class Rubik{
         * @see D()
         *
         */
-      void d (vector<char>& solution);
+      void d(vector<char>& solution);
 
       /**
         * @brief Move top side left
@@ -363,7 +363,7 @@ class Rubik{
         * @see u()
         *
         */
-      void U (vector<char>& solution);
+      void U(vector<char>& solution);
 
       /**
         * @brief Move top side left two times
@@ -380,7 +380,7 @@ class Rubik{
         * @see U()
         *
         */
-      void u (vector<char>& solution);
+      void u(vector<char>& solution);
 
       /**
         * @brief Move frontal side in clockwise
@@ -389,7 +389,7 @@ class Rubik{
         * @see f()
         *
         */
-      void F (vector<char>& solution);
+      void F(vector<char>& solution);
 
       /**
         * @brief Move frontal side in clockwise two times
@@ -406,7 +406,7 @@ class Rubik{
         * @see F()
         *
         */
-      void f (vector<char>& solution);
+      void f(vector<char>& solution);
 
       /**
         * @brief Move back side left
@@ -415,7 +415,7 @@ class Rubik{
         * @see b()
         *
         */
-      void B (vector<char>& solution);
+      void B(vector<char>& solution);
 
       /**
         * @brief Move back side left two times
@@ -432,7 +432,7 @@ class Rubik{
         * @see B()
         *
         */
-      void b (vector<char>& solution);
+      void b(vector<char>& solution);
 
 
 

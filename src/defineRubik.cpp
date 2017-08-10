@@ -2280,8 +2280,10 @@ void arguments(string name){
   cout << "\t-e\t explanation of valid <input_file> (same format for <output_file>)\n";
   cout << "\t-h\t print this help and exit\n";
   cout << "\t-i\t interactive mode of resolution, without extra arguments\n";
+  cout << "\t-M<mov>\t execute <mov>(in {U,u,D,d,L,l,R,r,F,f,B,b}) to cube in <input_file> (it's modified)";
   cout << "\t-m\t explain movements\n";
-  cout << "\t-R\t random Rubik's cube solution\n";
-  cout << "\t-r\t generate a random Rubik's cube\n";
+  cout << "\t-p\t print cube in human-readable format, need <input_file>";
+  cout << "\t-r\t random Rubik's cube solution\n";
+  cout << "\t-R\t generate a random Rubik's cube\n";
   cout << "\t-s\t show if a Rubik's cube is solved (y[es]/n[o]), need <input_file>" << endl;    
 }
