@@ -1,17 +1,11 @@
 # Rubik's cube
 
-This program solves Rubik's cube 3x3 with Beginners Method.
+This program solves Rubik's cube 3x3.
+
 
 ## Introduction
-The rubik's cube will be read from file or keyboard.
-The standard position for the rubik's cube is: green side in front of you and white side up.
-If your rubik's cube has different patterns or colours, look at this:
-
--Example 1: If the center of the left side is red, in all stickers you should select orange.
-
--Example 2: If the center of the back side is black, in your black stickers you should select blue.
-
-The program will read 54 colours, one side each time.
+Rubik's cube will be read from file or keyboard, it's represented as plain text.
+The standard position for our Rubik's cube is: green side in front of you and white side up, we will need this to recognize movements.
 
 
 ## Usage
@@ -44,12 +38,13 @@ You can use three different options (simultaneously is possible, not recommended
    L/l/5 for blue
    Y/y/6 for yellow
 
-You will be able to change the colours if you made mistakes. The program represents Rubik's cube in two dimensions with green side in front of user (centered blue sticker represents that the colour of the side is blue):
+The program will read 54 colours, one side each time.
+You will be able to change the colours if you made mistakes. The program represents Rubik's cube in two dimensions with green side in front of user (centered blue sticker represents blue side):
 
 ![Colours](./img/colours.jpeg "Colours")
 
 It would be represented in a file as
-``` bash
+```
 w w w w w w w w w
 o o o o o o o o o
 g g g g g g g g g
@@ -59,10 +54,28 @@ y y y y y y y y y
 
 ```
 
+### Other colours
+If your rubik's cube has different patterns or colours, look at this:
+
+-Example 1: If the center of the left side is red, in all stickers you should select orange.
+
+-Example 2: If the center of the back side is black, in your black stickers you should select blue.
+
 
 ## Movements
-The Rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2. "FBRLUD" movements in clockwise and "fbrlud" the opposite movement. As you can see [here](https://hobbylark.com/puzzles/Rubik-Cube-Algorithms):
+The Rubik's cube has 12 main movements and 6 double movements: F2, B2, R2, L2, U2, D2. "FBRLUD" movements in clockwise and "fbrlud" the opposite movement. As you can see [here](https://hobbylark.com/puzzles/Rubik-Cube-Algorithms):
 
     F(ront) B(ack) R(igth) L(eft) U(p) D(own)
 
 ![Movements](./img/movements.jpg "Movements")
+
+
+## Future work
+Ordered by difficulty:
+
+    * -t option to show tricks for pretty patterns
+
+    * -l <input_file> option to show logic errors in a Rubik's cube (like invalid permutations that made the cube unresolvable) and how to solve it)
+    * Implement advanced methods as Fridrich in 3x3
+
+    * Solve 4x4, 5x5, [megamix](https://www.flipkart.com/shengshou-megamix/p/itmdrbgnevm7yhsd), who knows...
