@@ -76,6 +76,7 @@ Ordered by difficulty:
     * -t option to show tricks for pretty patterns
 
     * -l <input_file> option to show logic errors in a Rubik's cube (like invalid permutations that made the cube unresolvable) and how to solve it)
+    
     * Implement advanced methods as Fridrich in 3x3
 
     * Solve 4x4, 5x5, [megamix](https://www.flipkart.com/shengshou-megamix/p/itmdrbgnevm7yhsd), who knows...
