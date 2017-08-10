@@ -512,7 +512,8 @@ class Rubik{
         * @see correctMistakes()
         *
         */
-      void printNumbers(std::ostream& os=cout) const;
+      //static
+      static void printNumbers(std::ostream& os=cout);
 
       /**
         * @brief Print rubik's cube with respective colours

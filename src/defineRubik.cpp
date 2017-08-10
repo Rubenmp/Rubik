@@ -1280,7 +1280,7 @@ void Rubik::correctMistakes(){
    char letter;
    int number;
    do{
-      printNumbers(cout);
+      Rubik::printNumbers(cout);
       do{
          cout << "Choose the position with the wrong colour [1,54]\n";
          cin >> number;
@@ -1835,7 +1835,7 @@ void Rubik::fileExample(){
   cout << endl << "\t1 2 3\n\t4 5 6\n\t7 8 9" << endl;
   cout << "Order: top, left, frontal, right, back and down faces." << endl;
   cout << "Numbers of sequence with green side in front of you are:\n";
-  rubik.printNumbers(cout);
+  Rubik::printNumbers(cout);
   cout << endl;
 }
 
@@ -1925,7 +1925,7 @@ void Rubik::printColour(const char& c) const{
    else if (colour == 'y')
       printf(YELLOW "Y" RESET);
 }
-void Rubik::printNumbers(std::ostream &os) const{
+void Rubik::printNumbers(std::ostream &os){
    os << "                     _______________ \n";
    os << "                     | 01 | 02 | 03 |\n";
    os << "                     _______________ \n";
@@ -2248,9 +2248,8 @@ void guide(){
    printf (RED "-Example 2: " RESET);
    cout << "If the center of the back side is black, in your black stickers you should select blue.\n";
    cout << "\tThe program will read 54 colours, one side each time.\n";
-
-   Rubik rubik;
-   rubik.printNumbers(cout);
+   
+   Rubik::printNumbers(cout);
 
    cout << "\tYou can use three different options: \n\t";
    printf (WHITE "W/w/1, " RESET);
