@@ -24,8 +24,8 @@ $ ./Rubik [option] [<input_file> [<output_file>]]
 |-MX| execute movement X(in {U,u,D,d,L,l,R,r,F,f,B,b}) to cube in <input_file> (modified) |
 | -m | explain valid movements |
 | -p | print cube in human-readable format, need <input_file> |
-| -R | random Rubik's cube solution |
-| -r | generate a random Rubik's cube |
+| -r | random Rubik's cube solution |
+| -R | generate a random Rubik's cube |
 | -s | show if a Rubik's cube is solved (y[es]/n[o]), need <input_file> |
 
 

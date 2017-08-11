@@ -1,17 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>     /* abs */
-//#include <cstdlib>
 #include <string.h>
 #include <vector>
 #include "defineRubik.h"
 using namespace std;
 
-#define RESET             "\x1b[0m"
-#define BT                "\x1b[1m"
-#define INTERMITENT       "\x1b[42m"
-#define BLUE              "\x1b[34m"
-#define GREEN             "\x1b[42m"
 
 int main(int argc, char* argv[]){
    Rubik rubik;
@@ -27,13 +21,13 @@ int main(int argc, char* argv[]){
    else if (argc <= 4){
      // Probably there are better implementations to handle options
      if (argv[1][0] == '-'){
-       if (strlen(argv[1]) != 2){
+       if (strlen(argv[1]) != 2){ // Two or more options
          if (argv[1][1] == 'M'){ // Execute movement
            ifstream is;
            is.open(argv[2]);
          
            if (!is){
-             cerr << "Error: not readable file " << argv[2] << endl;
+             cerr << "Error: not readable file " << argv[2] << "." << endl;
              return 1;
            }
            is >> rubik; // Read cube
@@ -103,14 +97,14 @@ int main(int argc, char* argv[]){
            rubik.printAll();
        }
        else{ // See options
-         if (argv[1][1] == 'e')
+         if (argv[1][1] == 'e') // Example
            Rubik::fileExample();
-         else if (argv[1][1] == 'h')
+         else if (argv[1][1] == 'h') // Help
            arguments(argv[0]);
-         else if (argv[1][1] == 'i'){
+         else if (argv[1][1] == 'i'){ // Interactive mode
            char entry;
            do{
-             cout << "Do you want to read of an file (1) or keyboard (2).\n";
+             cout << "Do you want to read of an file (1) or keyboard (2)." << endl;
              cin >> entry;
              cin.ignore(1024, '\n');
            }while(entry != '1' && entry != '2');
@@ -123,7 +117,7 @@ int main(int argc, char* argv[]){
              while (repeat){
                strcpy(anyKey, "");
                cout << "Create a file \"./data/rubik.dat\" with colours in valid order (see -e for explanation of valid file). ";
-               cout << "Press any key to continue.\n";
+               cout << "Press any key to continue." << endl;
                cin.getline(anyKey, '\n');
                is.open("./data/rubik.dat");
                if (is)
@@ -139,13 +133,13 @@ int main(int argc, char* argv[]){
              is.close();
            }
            else{
-             cout << "Reading rubik's cube in terminal (not recommended):\n";
+             cout << "Reading rubik's cube in terminal (not recommended):" << endl;
              cin >> rubik;
            }
            
            rubik.printAll();
            do{
-             cout << "Do you want to correct any position [y/n]?\n";
+             cout << "Do you want to correct any position [y/n]?" << endl;
              cin >> character;
            }while (tolower(character) != 'y' && tolower(character) != 'n');
            
@@ -156,7 +150,7 @@ int main(int argc, char* argv[]){
          }
          else if (argv[1][1] == 'm') // Explain movements
            movements();
-         else if (argv[1][1] == 'R'){ // Random solution
+         else if (argv[1][1] == 'r'){ // Random solution
            bool boolean = true;
            Rubik aux;
            while (boolean){
@@ -181,17 +175,15 @@ int main(int argc, char* argv[]){
            rubik.printAll();
            cout << endl;
          }
-         else if (argv[1][1] == 'r'){ // Random Rubik's cube
-           rubik = Rubik::randomRubik();
-           rubik.exportRubik();
-         }
+         else if (argv[1][1] == 'R') // Random Rubik's cube
+           cout << Rubik::randomRubik();
          else{
            if (argv[1][1] == 's'){
-             cerr << "Error: -s option needs extra argument <input_file>" << endl;
+             cerr << "Error: -s option needs extra argument <input_file>." << endl;
              return 1;
            }
            else{
-             cerr << "Error: invalid argument" << endl;
+             cerr << "Error: invalid argument '" << argv[1][1] << "'." << endl;
              return 1;
            }
          }
@@ -200,7 +192,7 @@ int main(int argc, char* argv[]){
      else{ // Files configuration
        ifstream file(argv[1]);
        if (!file) {
-         cerr << "Error: not readable file " << argv[1] << endl;
+         cerr << "Error: not readable file " << argv[1] << "." << endl;
          return 1;
        }
        else{
@@ -221,22 +213,21 @@ int main(int argc, char* argv[]){
              outFile.close();
            }
            else{
-             cerr << "Error: can not open " << argv[2] << ".\n";
+             cerr << "Error: can not open " << argv[2] << "." << endl;
              return 1;
            }
          }
          else{
-           cerr << "Error: invalid arguments, -h for help.\n";
+           cerr << "Error: invalid arguments '" << argv[1] << "', -h for help." << endl;
            return 1;
          }        
        }
      }
    }
    else{
-      cerr << "Error: invalid number of arguments.\n";
+      cerr << "Error: invalid number of arguments." << endl;
       return 1;
    }
 
-   flush(cout);
    return 0;
 }
