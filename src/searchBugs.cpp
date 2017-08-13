@@ -24,12 +24,16 @@ int main(int argc, char* argv[]){
          // Original rubik is solved, we want original positions to debug
          os << aux;
          os.close();
+
+         file = "";
          boolean = false;
          ++i;
        }
      }
      if (!boolean)
        cout << "There are bugs :D" << endl;
+     else
+       cout << "There aren't any bugs" << endl;
    }
    else{ // Fix bugs mode
      ifstream is(argv[1]);
