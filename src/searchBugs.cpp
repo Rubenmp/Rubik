@@ -4,26 +4,42 @@
 #include "defineRubik.h"
 using namespace std;
 
-int main(){
+int main(int argc, char* argv[]){
    Rubik rubik, aux;
    ofstream os;
    vector<char> solution;
    bool boolean = true;
+   string file;
+   int i = 1;
 
-	for (unsigned int j=0; j<100000 && boolean; j++){
-	   os.close();
-	   os.open("./data/error.dat");
-      aux = rubik = Rubik::randomRubik();
-      //cout << rubik;
-
-      rubik.solve(solution);
-		if(!rubik.isSolved()){
-			boolean = false;
-         aux.exportRubik(os);
-      }
+   if (argv[1][0] == '-' && argv[1][1] == 's' && argc == 2){ // Search mode
+     for (unsigned int j=0; j<100000 && boolean; j++){
+       aux = rubik = Rubik::randomRubik();
+       
+       rubik.solve(solution);
+       if(!rubik.isSolved()){
+         file += "./data/error" + i;
+         os.open(file);
+         
+         // Original rubik is solved, we want original positions to debug
+         os << aux;
+         os.close();
+         boolean = false;
+         ++i;
+       }
+     }
+     if (!boolean)
+       cout << "There are bugs :D" << endl;
    }
-   if (!boolean)
-      cout << "Errors..." << endl;
+   else{ // Fix bugs mode
+     ifstream is(argv[1]);
 
+     is >> rubik;
+     cout << rubik;
+
+     rubik.solveStepByStep(solution);
+     cout << rubik;
+   }
+   
    cout << endl;
 }

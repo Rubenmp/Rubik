@@ -7,7 +7,7 @@ DIR_LIBS=./lib
 SRC=./src
 OBJ=./obj
 
-all: Rubik searchBugs fixBugs
+all: Rubik searchBugs
 
 Rubik: $(OBJ)/Rubik.o $(DIR_LIBS)/librubik.a
 	g++ -o $(BIN)/Rubik $< $(LIBS)
@@ -15,18 +15,12 @@ Rubik: $(OBJ)/Rubik.o $(DIR_LIBS)/librubik.a
 searchBugs: $(OBJ)/searchBugs.o $(DIR_LIBS)/librubik.a
 	g++ -o $(BIN)/searchBugs $< $(LIBS)
 
-fixBugs:  $(OBJ)/fixBugs.o $(DIR_LIBS)/librubik.a
-	g++ -o $(BIN)/fixBugs $< $(LIBS)
-
 
 
 $(OBJ)/Rubik.o: $(SRC)/Rubik.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
 
 $(OBJ)/searchBugs.o: $(SRC)/searchBugs.cpp
-	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
-
-$(OBJ)/fixBugs.o: $(SRC)/fixBugs.cpp
 	g++ -c -I$(INCLUDE) $(CXXFLAGS) -o $@ $<
 
 

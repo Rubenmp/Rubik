@@ -1826,7 +1826,7 @@ void Rubik::solve(vector<char>& solution, const char &method){
 void Rubik::fileExample(){
   Rubik rubik = Rubik::randomRubik();
   cout << "Input file example:";
-  rubik.exportRubik(cout);
+  cout << rubik;
   cout << "\nThis file represents this Rubik's cube:\n";
   rubik.printAll();
   cout << "\n\nLetters can be in capital letters, lowercase or number in {1, ... , 6}.";
@@ -2180,14 +2180,15 @@ Rubik& Rubik::operator = (const Rubik& rubik){
       int i;
       for (i=0; i<6; ++i)
          center[i].center = rubik.getCenter(i).center;
+
       for (i=0; i<12; ++i){
          edge[i].up   = rubik.getEdge(i).up;
          edge[i].down = rubik.getEdge(i).down;
       }
 
       for (i=0; i<8; ++i){
-         corner[i].up = rubik.getCorner(i).up;
-         corner[i].left = rubik.getCorner(i).left;
+         corner[i].up    = rubik.getCorner(i).up;
+         corner[i].left  = rubik.getCorner(i).left;
          corner[i].right = rubik.getCorner(i).right;
       }
    }
@@ -2201,6 +2202,7 @@ bool Rubik::operator == (const Rubik& rubik){
          if (center[i].center != rubik.getCenter(i).center)
             equal = false;
       }
+
       for (i=0; i<12 && !equal; ++i){
          if (edge[i].up != rubik.getEdge(i).up ||
              edge[i].down != rubik.getEdge(i).down)
@@ -2225,11 +2227,11 @@ bool Rubik::operator != (const Rubik& rubik){
 
 // External methods
 std::ostream& operator << (std::ostream& os, const Rubik& rubik){
-   rubik.exportRubik(os);
+   os << rubik;
    return os;
 }
 std::istream& operator >> (std::istream& is, Rubik& rubik){
-   rubik.readRubik(is);
+   is >> rubik;
    return is;
 }
 
@@ -2254,24 +2256,24 @@ void guide(){
    Rubik::printNumbers(cout);
 
    cout << "\tYou can use three different options: \n\t";
-   printf (WHITE "W/w/1, " RESET);
-   printf (BLACK "O/o/2" RESET " (\"orange\"), ");
-   printf (GREEN "G/g/3, " RESET);
-   printf (RED "R/r/4, " RESET);
-   printf (BLUE "L/l/5, " RESET);
-   printf (YELLOW "Y/y/6 " RESET "\n");
-   cout << "\tYou will be able to change the colours." << endl;
+   printf (WHITE  "W/w/1, " RESET);
+   printf (BLACK  "O/o/2"   RESET " (\"orange\"), ");
+   printf (GREEN  "G/g/3, " RESET);
+   printf (RED    "R/r/4, " RESET);
+   printf (BLUE   "L/l/5, " RESET);
+   printf (YELLOW "Y/y/6 "  RESET);
+   cout << "\n\tYou will be able to change the colours." << endl;
 }
 void presentation(){
    cout << "\t";
    printf (BT_ON BLUE " #############################################################" RESET "\n");
    cout << "\t -";
-   printf (BT_ON "This program solves rubik's cubes 3x3 with beginners method" RESET "\n");
+   printf (BT_ON "This program solves rubik's cubes 3x3" RESET "\n");
    cout << "\t";
    printf (BT_ON BLUE " #############################################################" RESET "\n");
 }
 void movements(){
-  cout << "The rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.";
+  cout << "Rubik's cube has 12 different movements and double movements: F2, B2, R2, L2, U2, D2.";
   cout << " \"FBRLUD\" movements in clockwise, \"fbrlud\" the opposite movement.";
   cout << "\nLetters come from: F(ront), B(ack), R(igth), L(eft), U(p), D(own)" << endl;
 }
