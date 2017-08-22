@@ -51,7 +51,6 @@ g g g g g g g g g
 r r r r r r r r r
 l l l l l l l l l
 y y y y y y y y y
-
 ```
 
 ### Other colours
