@@ -9,10 +9,11 @@ The standard position for our Rubik's cube is: green side in front of you and wh
 
 
 ## Usage
+Here <input_file> represents a Rubik's cube which we want to solve, <output_file> is the optional file to send the solution.
+
 ``` bash
 $ ./Rubik [option] [<input_file> [<output_file>]]
 ```
-<input_file> represents a Rubik's cube which we want to solve, <output_file> is the optional file to send the solution.
 
 ![Demo Gurú](./img/rubik.gif)
 
@@ -75,7 +76,7 @@ Ordered by difficulty:
 * -t option to show tricks for pretty patterns
 
 * -l <input_file> option to show logic errors in a Rubik's cube (like invalid permutations that made the cube unresolvable) and how to solve it [self implemented]
-    
+
 * Implement advanced methods as Fridrich in 3x3
 
 * Solve 4x4, 5x5, [megamix](https://www.flipkart.com/shengshou-megamix/p/itmdrbgnevm7yhsd), who knows...
