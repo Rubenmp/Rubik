@@ -1,0 +1,5 @@
+language: cpp
+
+# Configuration
+script: make && make test
+warnings_are_errors: false

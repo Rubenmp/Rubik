@@ -39,10 +39,8 @@ $(DIR_LIBS)/librubik.a: $(OBJ)/defineRubik.o
 documentation:
 	doxygen doc/doxys/Doxyfile
 
-
 test:
 	./bin/Rubik ./data/example.dat
-
 
 clean:
 	@ echo "Cleaning..."
