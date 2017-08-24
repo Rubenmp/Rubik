@@ -189,8 +189,9 @@ int main(int argc, char* argv[]){
          }
        }
      }
-     else{ // Files configuration
-       ifstream file(argv[1]);
+     else if (argc <= 3) { // Files configuration
+       ifstream file;
+       file.open(argv[1]);
        if (!file) {
          cerr << "Error: not readable file " << argv[1] << "." << endl;
          return 1;
@@ -199,6 +200,7 @@ int main(int argc, char* argv[]){
          file >> rubik;
          file.close();
          rubik.solve(solution);
+         
          if (argc == 2){
            for (unsigned int i=0; i<solution.size(); ++i)
              cout << solution[i];
@@ -218,15 +220,15 @@ int main(int argc, char* argv[]){
            }
          }
          else{
-           cerr << "Error: invalid arguments '" << argv[1] << "', -h for help." << endl;
+           cerr << "Error: invalid arguments, -h for help." << endl;
            return 1;
          }        
        }
      }
-   }
+   }  
    else{
-      cerr << "Error: invalid number of arguments." << endl;
-      return 1;
+     cerr << "Error: invalid number of arguments." << endl;
+     return 1;
    }
 
    return 0;
