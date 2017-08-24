@@ -40,6 +40,10 @@ documentation:
 	doxygen doc/doxys/Doxyfile
 
 
+test:
+	./bin/Rubik ./data/example.dat
+
+
 clean:
 	@ echo "Cleaning..."
 	rm -f $(OBJ)/*.o $(DIR_LIBS)/lib*.a ./doc/html/*
