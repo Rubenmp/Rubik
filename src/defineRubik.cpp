@@ -2227,11 +2227,11 @@ bool Rubik::operator != (const Rubik& rubik){
 
 // External methods
 std::ostream& operator << (std::ostream& os, const Rubik& rubik){
-   os << rubik;
+   rubik.exportRubik(os);
    return os;
 }
 std::istream& operator >> (std::istream& is, Rubik& rubik){
-   is >> rubik;
+   rubik.readRubik(is);
    return is;
 }
 
