@@ -1,5 +1,7 @@
 # Rubik's cube
 
+[![Travis](https://travis-ci.org/Rubenmp/Rubik.svg?branch=master)](https://travis-ci.org/Rubenmp/Rubik)
+
 This program solves Rubik's cube 3x3.
 
 
