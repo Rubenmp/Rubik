@@ -32,7 +32,7 @@ $ ./Rubik [option] [<input_file> [<output_file>]]
 | -s | show if a Rubik's cube is solved (y[es]/n[o]), need <input_file> |
 
 
-## Colours
+## Colors
 You can use three different options (simultaneously is possible, not recommended):
    W/w/1 for white
    O/o/2 for orange
@@ -41,10 +41,10 @@ You can use three different options (simultaneously is possible, not recommended
    L/l/5 for blue
    Y/y/6 for yellow
 
-The program will read 54 colours, one side each time.
-You will be able to change the colours if you made mistakes. The program represents Rubik's cube in two dimensions with green side in front of user (centered blue sticker represents blue side):
+The program will read 54 colors, one side each time.
+You will be able to change the colors if you made mistakes. The program represents Rubik's cube in two dimensions with green side in front of user (centered blue sticker represents blue side):
 
-![Colours](./img/colours.jpeg "Colours")
+![Colors](./img/colours.jpeg "Colors")
 
 It would be represented in a file as
 ```
@@ -56,8 +56,8 @@ l l l l l l l l l
 y y y y y y y y y
 ```
 
-### Other colours
-If your rubik's cube has different patterns or colours, look at this:
+### Other colors
+If your rubik's cube has different patterns or colors, look at this:
 
 -Example 1: If the center of the left side is red, in all stickers you should select orange.
 
